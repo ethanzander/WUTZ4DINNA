@@ -1,0 +1,17 @@
+.topmar5{
+    margin-top: 5%;
+}
+
+html{
+    background-color: lightskyblue;
+}
+.container{
+    background-color: #FFF782;
+}
+
+ #fridge{
+    width: 7%;
+    position: absolute;
+    top: 17px;
+    left: 29%;
+} 
