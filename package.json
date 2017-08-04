@@ -1,0 +1,24 @@
+{
+  "name": "w4d",
+  "version": "1.0.0",
+  "description": "A recipe application to find the user possible recipes based on what they have on hand.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethanzander/WUTZ4DINNA.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ethanzander/WUTZ4DINNA/issues"
+  },
+  "homepage": "https://github.com/ethanzander/WUTZ4DINNA#readme"
+}
