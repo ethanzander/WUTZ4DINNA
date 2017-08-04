@@ -49,11 +49,17 @@
       <div class="one-half column">
         <div class="row">
           <div class="six columns">
-            <input class="button-primary u-pull-right" type="submit" value="Submit">
+            <input class="button-primary u-pull-right" id="btn-sign-up" type="submit" value="Sign Up">
+          </div>
+          <div class="six columns">
+            <input class="button-primary u-pull-right" id="btn-login" type="submit" value="Login">
+          </div>
+          <div class="six columns">
+            <input class="button-primary u-pull-right" id="btn-logout" type="submit" value="Logout">
           </div>
           <div class="six columns">
             <label for="email">Your email</label>
-            <input type="email" name="email" placeholder="test@mailbox.com">
+            <input type="email" id="email-input" name="email" placeholder="test@mailbox.com">
           </div>
           <div class="row">
             <div class="six columns">
@@ -61,7 +67,7 @@
             </div>
             <div class="six columns">
               <label for="password">Password</label>
-              <input type="password" name="password" value="">
+              <input type="password" id="user-password" name="password" value="">
             </div>
           </div>
         </div>
@@ -181,6 +187,10 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <!-- FireBase -->
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <!-- Jquery -->
+  <script  src="http://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+  <!-- Our javascript app logic -->
+  <script src="javascript/appLogic.js"></script>
 </body>
 
 </html>
