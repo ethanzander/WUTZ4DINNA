@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/ethanzander/WUTZ4DINNA/issues"
   },
-  "homepage": "https://github.com/ethanzander/WUTZ4DINNA#readme"
+  "homepage": "https://github.com/ethanzander/WUTZ4DINNA#readme",
+  "devDependencies": {}
 }

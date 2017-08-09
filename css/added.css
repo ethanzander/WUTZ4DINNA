@@ -3,16 +3,42 @@
 }
 
 html{
-    background-color: lightskyblue;
+    background-image: url("images/whitey/whitey.png");
+    background-repeat: repeat;
 }
 .container{
-    background-color: #FFF782;
+    background-color: rgb(162,181,203);
 }
 .u-pull-right {
   float: right; 
 }
 .u-pull-left {
   float: left;
+}
+
+
+ .fridge{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+  font-family: 'Playfair Display', serif;
+  color: linen;
+}
+
+.topHeader{
+  background-color: rgb(238,52,36);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  text-align: center;
 }
 
 #fridge{
@@ -36,3 +62,4 @@ html{
 #your-password{
     visibility: visible;
 }
+
