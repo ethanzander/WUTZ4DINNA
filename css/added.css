@@ -3,15 +3,33 @@
 }
 
 html{
-    background-color: lightskyblue;
+    background-image: url("images/whitey/whitey.png");
+    background-repeat: repeat;
 }
 .container{
-    background-color: #FFF782;
+    background-color: rgb(162,181,203);
 }
 
- #fridge{
-    width: 7%;
-    position: absolute;
-    top: 17px;
-    left: 29%;
-} 
+ .fridge{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+  font-family: 'Playfair Display', serif;
+  color: linen;
+}
+
+.topHeader{
+  background-color: rgb(238,52,36);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  text-align: center;
+}
