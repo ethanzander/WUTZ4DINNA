@@ -15,7 +15,9 @@ html{
 .u-pull-left {
   float: left;
 }
-
+#login-input{
+    visibility: visible;
+}
 
  .fridge{
     width: 50%;

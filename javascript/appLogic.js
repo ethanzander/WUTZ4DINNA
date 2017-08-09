@@ -82,6 +82,9 @@ $('document').ready(function() {
         var promise = auth.signInWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
         console.log(email);
+        $("#email-input").val("");
+        $("#user-password").val("");
+        $("#login-input").hide();
     });
     //Add Logout event
     btnLogout.addEventListener("click", function (event) {
@@ -89,8 +92,7 @@ $('document').ready(function() {
             console.log('Signed Out');
             document.getElementById("btn-login").style.visibility = "visible";
             document.getElementById("btn-sign-up").style.visibility = "visible";
-            document.getElementById("email-input").style.visibility = "visible";
-            document.getElementById("user-password").style.visibility = "visible";
+            $("#login-input").show();
             document.getElementById("btn-logout").style.visibility = "hidden";
         }, function (error) {
             console.error('Sign Out Error', error);
@@ -106,6 +108,8 @@ $('document').ready(function() {
         //Sign in
         var promise = auth.createUserWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
+        $("#email-input").val("");
+        $("#user-password").val("");
     });
 
     firebase.auth().onAuthStateChanged(function (user) {
