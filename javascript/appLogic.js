@@ -18,7 +18,6 @@ $('document').ready(function() {
       console.log(response);
       for (var i = 0; i < results.length; i++) {
 
-
         var recipeDisplay = $('<div class = "recipeDisplay">');
         var image = $('<img class = "image">');
         image.attr("src", response.matches[i].smallImageUrls[0]);
@@ -27,12 +26,10 @@ $('document').ready(function() {
         var recipeName = $("<p class = 'recipename'>");
         recipeName.text(response.matches[i].recipeName);
 
-
         recipeDisplay.append(image);
         recipeDisplay.append(recipeName);
         console.log(response.matches[i].recipeName);
         $("#recipeDiv").append(recipeDisplay);
-
       }
     });
   });
