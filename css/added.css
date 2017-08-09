@@ -8,10 +8,31 @@ html{
 .container{
     background-color: #FFF782;
 }
+.u-pull-right {
+  float: right; 
+}
+.u-pull-left {
+  float: left;
+}
 
- #fridge{
+#fridge{
     width: 7%;
     position: absolute;
     top: 17px;
     left: 29%;
 } 
+#btn-logout{
+    visibility: hidden;
+}
+#btn-login{
+    visibility: visible;
+}
+#btn-sign-up{
+    visibility: visible;
+}
+#your-email{
+    visibility: visible;
+}
+#your-password{
+    visibility: visible;
+}
