@@ -22,12 +22,13 @@ $('document').ready(function() {
         var recipeDisplay = $('<div class = "recipeDisplay">');
         var image = $('<img class = "image">');
         image.attr("src", response.matches[i].smallImageUrls[0]);
-        image.attr("recipeId", response.matches[i].id);
+        //image.attr("recipeId", response.matches[i].id);
 
         var recipeName = $("<p class = 'recipename'>");
         recipeName.text(response.matches[i].recipeName);
 
         recipeDisplay.append(image);
+        recipeDisplay.attr("recipeId", response.matches[i].id);
         recipeDisplay.append(recipeName);
         console.log(response.matches[i].recipeName);
         $("#recipeDiv").append(recipeDisplay);
@@ -39,7 +40,8 @@ $('document').ready(function() {
     $("#recipeDiv").empty();
   })
   //code to run when you click on a recipe img
-  $(document).on("click", ".image", function() {
+  $(document).on("click", ".recipeDisplay", function() {
+    var self = this
     var recipeId = $(this).attr("recipeId");
     var queryURL2 = "http://api.yummly.com/v1/api/recipe/" + recipeId + "?_app_id=b21780d2&_app_key=edc2ee3a9551ef7f48b3279d332a2b09"
 
@@ -50,6 +52,9 @@ $('document').ready(function() {
     })
     .done(function(response) {
       console.log(response);
+
+
+
       var recipeLink = response.source.sourceRecipeUrl;
       var  link = $('<a class = "link" href="'+recipeLink+'">Read Directions</a>');
 
@@ -66,7 +71,6 @@ $('document').ready(function() {
     });
 
   });
-
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyBVeR596AsKMWDitOfTEAG7mP3S_zZGMYA",
