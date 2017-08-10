@@ -1,6 +1,7 @@
 
 
 $('document').ready(function() {
+  var shoppingList = [];
 
   $("#submit").on("click", function() {
     event.preventDefault();
@@ -22,12 +23,13 @@ $('document').ready(function() {
         var recipeDisplay = $('<div class = "recipeDisplay">');
         var image = $('<img class = "image">');
         image.attr("src", response.matches[i].smallImageUrls[0]);
-        image.attr("recipeId", response.matches[i].id);
+        // image.attr("recipeId", response.matches[i].id);
 
         var recipeName = $("<p class = 'recipename'>");
         recipeName.text(response.matches[i].recipeName);
 
         recipeDisplay.append(image);
+        recipeDisplay.attr('recipeId',response.matches[i].id;
         recipeDisplay.append(recipeName);
         console.log(response.matches[i].recipeName);
         $("#recipeDiv").append(recipeDisplay);
