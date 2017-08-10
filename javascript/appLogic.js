@@ -55,7 +55,22 @@ $('document').ready(function() {
     });
 
   });
-  
+    //-----------------------------------------
+    //Add Items to shopping list
+    var shopList = ['chicken', 'mushrooms', 'broccoli'];
+    function addToShopList (){
+        //insert location of ingredinet value in ? ---- By class name?
+        var ingredient = $('?').val();
+        shopList.push(ingredient);
+        database.ref().push(shopList);
+    };
+    //TODO display in a "shopping list" div inside a ul
+    $(".ingredient").on("click", function(){
+        addToShopList();
+    })
+
+    //End add items to shopping list
+    //----------------------------------------
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyBVeR596AsKMWDitOfTEAG7mP3S_zZGMYA",
@@ -66,6 +81,7 @@ $('document').ready(function() {
         messagingSenderId: "601066690860"
     };
     firebase.initializeApp(config);
+    var database = firebase.database();
     //Get Elements
     var userEmail = document.getElementById("email-input");
     var userPassword = document.getElementById("user-password");
