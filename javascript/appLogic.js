@@ -49,13 +49,12 @@ $('document').ready(function() {
       method: "GET"
     })
     .done(function(response) {
-      $("#recipeDiv").empty();
       console.log(response);
 
     });
 
   });
-  
+
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyBVeR596AsKMWDitOfTEAG7mP3S_zZGMYA",
