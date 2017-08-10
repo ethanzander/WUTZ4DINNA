@@ -32,7 +32,7 @@ $('document').ready(function() {
         recipeDisplay.attr("recipeId", response.matches[i].id);
         recipeDisplay.append(recipeName);
         console.log(response.matches[i].recipeName);
-        $("#recipeDiv").append(recipeDisplay);
+        $("#recipeDiv").prepend(recipeDisplay);
       }
     });
   });
@@ -42,7 +42,7 @@ $('document').ready(function() {
   })
   //code to run when you click on a recipe img
   $(document).on("click", ".recipeDisplay", function() {
-    var self = this
+    var self = this;
     var recipeId = $(this).attr("recipeId");
     var queryURL2 = "http://api.yummly.com/v1/api/recipe/" + recipeId + "?_app_id=b21780d2&_app_key=edc2ee3a9551ef7f48b3279d332a2b09"
 
@@ -61,7 +61,7 @@ $('document').ready(function() {
 
       for (var i = 0; i<response.ingredientLines.length; i++){
         var ingredient = response.ingredientLines[i];
-        var rButton = $('<input id = "checkBox" type = "checkbox" value = "'+ingredient+'" >"'+ingredient+'"<br>');
+        var rButton = $('<input class = "checkBox" type = "checkbox" value = "'+ingredient+'" >"'+ingredient+'"<br>');
         $('#form').append(rButton);
       };
       $("form").append('<input id = "addToList" type = "submit" value = "Add to Shopping List" >');
@@ -71,11 +71,11 @@ $('document').ready(function() {
   });
 
   $(document).on("click", "#addToList", function() {
-    var listItem = $('#checkBox').val();
-
-    shoppingList.push(listItem);
-    console.log(listItem);
-
+    $('.checkBox').each( function() {
+       var listItem = $(this).val().trim();
+       console.log(listItem);
+       shoppingList.push(listItem);
+    });
 
   });
 
