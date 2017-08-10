@@ -1,6 +1,7 @@
 
 
 $('document').ready(function() {
+  var shoppingList = [];
 
   $("#submit").on("click", function() {
     event.preventDefault();
@@ -52,25 +53,31 @@ $('document').ready(function() {
     })
     .done(function(response) {
       console.log(response);
-
-
-
+      var totalTime = response.totalTime;
       var recipeLink = response.source.sourceRecipeUrl;
       var  link = $('<a class = "link" href="'+recipeLink+'">Read Directions</a>');
 
+      $(self).append('<form id = "form"></form>');
+
       for (var i = 0; i<response.ingredientLines.length; i++){
-        var listItem = $('<p class = "ingredient">');
-        var rButton = $('<input type="checkbox" name="chkBox">');
-
-        listItem.append(response.ingredientLines[i]);
-        listItem.append(rButton);
-        $(self).append(listItem);
-      }
+        var ingredient = response.ingredientLines[i];
+        var rButton = $('<input type = "checkbox" value = "'+ingredient+'" >"'+ingredient+'"<br>');
+        $('#form').append(rButton);
+      };
+      $("form").append('<input id = "addToList" type = "submit" value = "Add to Shopping List" >');
       $(self).append(link);
-
     });
 
   });
+
+  $(document).on("click", "#addToList", function() {
+
+    shoppingList.push()
+
+
+  });
+
+
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyBVeR596AsKMWDitOfTEAG7mP3S_zZGMYA",
