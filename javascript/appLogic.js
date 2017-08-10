@@ -50,6 +50,18 @@ $('document').ready(function() {
     })
     .done(function(response) {
       console.log(response);
+      var recipeLink = response.source.sourceRecipeUrl;
+      var  link = $('<a class = "link" href="'+recipeLink+'">Read Directions</a>');
+
+      for (var i = 0; i<response.ingredientLines.length; i++){
+        var listItem = $('<p class = "ingredient">');
+        var rButton = $('<input type="checkbox" name="chkBox">');
+
+        listItem.append(response.ingredientLines[i]);
+        listItem.append(rButton);
+        $(self).append(listItem);
+      }
+      $(self).append(link);
 
     });
 
