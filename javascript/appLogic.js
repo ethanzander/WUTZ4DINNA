@@ -61,7 +61,7 @@ $('document').ready(function() {
 
       for (var i = 0; i<response.ingredientLines.length; i++){
         var ingredient = response.ingredientLines[i];
-        var rButton = $('<input type = "checkbox" value = "'+ingredient+'" >"'+ingredient+'"<br>');
+        var rButton = $('<input id = "checkBox" type = "checkbox" value = "'+ingredient+'" >"'+ingredient+'"<br>');
         $('#form').append(rButton);
       };
       $("form").append('<input id = "addToList" type = "submit" value = "Add to Shopping List" >');
@@ -71,8 +71,10 @@ $('document').ready(function() {
   });
 
   $(document).on("click", "#addToList", function() {
+    var listItem = $('#checkBox').val();
 
-    shoppingList.push()
+    shoppingList.push(listItem);
+    console.log(listItem);
 
 
   });
