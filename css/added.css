@@ -2,6 +2,13 @@
     margin-top: 5%;
 }
 
+.enterIngredients {
+    padding: 1%;
+}
+
+.clear {
+    align-content: center;
+}
 html{
     /* background-image: url("images/whitey/whitey.png"); */
     background-repeat: repeat;

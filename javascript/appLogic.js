@@ -1,6 +1,7 @@
 
 
 $('document').ready(function() {
+  var shoppingList = [];
 
   $("#submit").on("click", function() {
     event.preventDefault();
@@ -22,12 +23,13 @@ $('document').ready(function() {
         var recipeDisplay = $('<div class = "recipeDisplay">');
         var image = $('<img class = "image">');
         image.attr("src", response.matches[i].smallImageUrls[0]);
-        image.attr("recipeId", response.matches[i].id);
+        // image.attr("recipeId", response.matches[i].id);
 
         var recipeName = $("<p class = 'recipename'>");
         recipeName.text(response.matches[i].recipeName);
 
         recipeDisplay.append(image);
+        recipeDisplay.attr('recipeId',response.matches[i].id);
         recipeDisplay.append(recipeName);
         console.log(response.matches[i].recipeName);
         $("#recipeDiv").append(recipeDisplay);
@@ -55,6 +57,7 @@ $('document').ready(function() {
     });
 
   });
+<<<<<<< HEAD
     //-----------------------------------------
     //Add Items to shopping list
     var shopList = ['chicken', 'mushrooms', 'broccoli'];
@@ -71,6 +74,9 @@ $('document').ready(function() {
 
     //End add items to shopping list
     //----------------------------------------
+=======
+
+>>>>>>> 786d52cb8d5aaa8aa672399fba527a0ccce2532e
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyBVeR596AsKMWDitOfTEAG7mP3S_zZGMYA",

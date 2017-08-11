@@ -52,29 +52,25 @@
       </div>
       <div class="one-half column" style="margin-top: 2%">
         <div class="row">
-          <div class="six columns">
-            <input class="button-primary u-pull-right" id="btn-sign-up" type="submit" value="Sign Up">
-          </div>
-          <div class="six columns">
+          <div class="twelve columns">
             <input class="button-primary u-pull-right" id="btn-login" type="submit" value="Login">
-          </div>
-          <div class="six columns">
+            <input class="button-primary u-pull-right" id="btn-sign-up" type="submit" value="Sign Up">
             <input class="button-primary u-pull-right" id="btn-logout" type="submit" value="Logout">
           </div>
-          <div class="row" id="login-input">
-            <div class="six columns">
-              <label for="email">Your email</label>
-              <input type="email" id="email-input" name="email" placeholder="test@mailbox.com">
-            </div>
+        </div>
 
-            <div class="six columns">
-              <p></p>
-            </div>
+        <div class="row" id="login-input">
+          <div class="six columns">
+            <label for="email">Your email</label>
+            <input type="email" id="email-input" name="email" placeholder="test@mailbox.com">
+          </div>
+          <div class="row">
             <div class="six columns">
               <label for="password">Password</label>
               <input type="password" id="user-password" name="password" value="">
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -84,27 +80,23 @@
       <div class="one-third column u-pull-left">
         <h4>Tell Us Watcha Got?</h4>
 
-        <img width="100%" src="images/Food-PNG-Clipart-180x180.png" alt="Delicious Food">
+        <img style="align-content:space-around" width="100%" src="images/Food-PNG-Clipart-180x180.png" alt="Delicious Food">
 
       </div>
 
       <!--Stuff I have in my fridge
           ____________________________________________________  -->
       <div class="two-thirds column">
-        <div class="row">
-          <div class="twelve-columns u-pull-right">
-            <form>
-              <label for="ingredientOne">1st Ingredient</label>
-              <input id="ingredient1" class="u-max-full-width" type="text" name="ingredientOne" value="">
-              <label for="ingedientTwo">2nd Ingredient</label>
-              <input id="ingredient2" class="u-max-full-width" type="text" name="ingredientTwo" value="">
-              <label for="ingedientThree">3rd Ingredient</label>
-              <input id="ingredient3" class="u-max-full-width" type="text" name="ingredientThree" value="">
-              <br>
-              <input id="submit" class="button button-primary" type="submit" name="Search" value="Search">
-            </form>
-          </div>
-        </div>
+        <form class="enterIngredients">
+          <label for="ingredientOne">1st Ingredient</label>
+          <input id="ingredient1" class="u-full-width" type="text" name="ingredientOne" value="">
+          <label for="ingedientTwo">2nd Ingredient</label>
+          <input id="ingredient2" class="u-full-width" type="text" name="ingredientTwo" value="">
+          <label for="ingedientThree">3rd Ingredient</label>
+          <input id="ingredient3" class="u-full-width" type="text" name="ingredientThree" value="">
+          <br>
+          <input id="submit" class="button button-primary" type="submit" name="Search" value="Search">
+        </form>
       </div>
     </div>
 
@@ -114,57 +106,13 @@
 
     </div>
     <div class="row" id="recipeDiv">
-
-
     </div>
     <!--Shopping List
       ____________________________________________  -->
-    <div class="one-third column">
-      <h4>Shopping List</h4>
-      <table class="u-full-width">
-        <thead>
-          <tr>
-            <th>
-              <h5>Ingredients</h5>
-            </th>
-            <th>
-              <h5>Qty</h5>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Carrots</td>
-            <td>
-              <form>
-                <input type="text" name="amount" value="">
-              </form>
-              <select class="u-full-width" id="measure">
-                <option value="lb(s)">Pound(s)</option>
-                <option value="oz">Ounce(s)</option>
-                <option value="bunch(s)">Bunch(s)</option>
-                </select>
-            </td>
-          </tr>
-          <tr>
-            <td>grapes</td>
-            <td>
-              <form>
-                <input type="text" name="amount" value="">
-              </form>
-              <select class="u-full-width" id="measure">
-                <option value="lb(s)">Pound(s)</option>
-                <option value="oz">Ounce(s)</option>
-                <option value="bunch(s)">Bunch(s)</option>
-                </select></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="one-third column" id="shoppingList">
+      <p>Create a list here</p>
     </div>
   </div>
-
-
-  <div class="row"></div>
   </div>
 
 
