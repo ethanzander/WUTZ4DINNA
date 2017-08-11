@@ -38,7 +38,9 @@ $('document').ready(function() {
     var ingredient2 = $("#ingredient2").val().trim();
     var ingredient3 = $("#ingredient3").val().trim();
 
+
     var queryURL = "http://api.yummly.com/v1/api/recipes?_app_id=b21780d2&_app_key=edc2ee3a9551ef7f48b3279d332a2b09&q=" + ingredient1 + "&q" + ingredient2 + "&q=" + ingredient3;
+
     //search recepies ajax call
     $.ajax({
       url: queryURL,
