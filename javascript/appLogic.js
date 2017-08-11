@@ -1,7 +1,7 @@
 
 
 $('document').ready(function() {
-  var shoppingList = [];
+  var shoppingList = ['chicken', 'mushrooms', 'broccoli'];
 
   $("#submit").on("click", function() {
     event.preventDefault();
@@ -57,26 +57,24 @@ $('document').ready(function() {
     });
 
   });
-<<<<<<< HEAD
     //-----------------------------------------
     //Add Items to shopping list
-    var shopList = ['chicken', 'mushrooms', 'broccoli'];
+    
     function addToShopList (){
-        //insert location of ingredinet value in ? ---- By class name?
-        var ingredient = $('?').val();
-        shopList.push(ingredient);
-        database.ref().push(shopList);
+        var ingredient = $('.ingredient-button').val();
+        shoppingList.push(ingredient);
+        for(var i = 0, i < shoppingList.lenth, i++){
+            $('#shoppingList').append('<p>' + shoppingList[i] + '</p>');
+        }
     };
     //TODO display in a "shopping list" div inside a ul
-    $(".ingredient").on("click", function(){
+    $(".ingredient-button").on("click", function(){
         addToShopList();
     })
 
     //End add items to shopping list
     //----------------------------------------
-=======
 
->>>>>>> 786d52cb8d5aaa8aa672399fba527a0ccce2532e
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyBVeR596AsKMWDitOfTEAG7mP3S_zZGMYA",
