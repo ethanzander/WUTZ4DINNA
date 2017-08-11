@@ -1,16 +1,14 @@
 .topmar5{
     margin-top: 5%;
+    border-bottom: solid 3px;
+    border-bottom-color: #bbb;
 }
 
 .enterIngredients {
     padding: 1%;
 }
 
-.clear {
-    align-content: center;
-}
 html{
-    /* background-image: url("images/whitey/whitey.png"); */
     background-repeat: repeat;
 }
 .container{
@@ -26,10 +24,26 @@ html{
     visibility: visible;
 }
 
- .fridge{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+.fridge{
+    width: 80%;
+    z-index: 66;
+    margin-left: 15%;
+}
+
+.fridgeDoor{
+    width: 44%;
+    z-index: 67;
+    position: relative;
+    top: -334px;
+    left: 74px;
+    margin-left: 15%;
+}
+
+ .fruit{
+    width: 133%;
+    position: relative;
+    top: 9px;
+    left: -53px;
 }
 
 h1{
@@ -50,12 +64,10 @@ h6{
   text-align: center;
 }
 
-#fridge{
-    width: 7%;
-    position: absolute;
-    top: 17px;
-    left: 29%;
-} 
+h4{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #btn-logout{
     visibility: hidden;
 }
