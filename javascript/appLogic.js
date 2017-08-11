@@ -1,13 +1,44 @@
 $('document').ready(function() {
+
+  var queryUrl0 = "http://api.yummly.com/v1/api/recipes?_app_id=b21780d2&_app_key=edc2ee3a9551ef7f48b3279d332a2b09&q=" + ""
+
+  $.ajax({
+    url: queryUrl0,
+    method: "GET"
+  })
+  .done(function(response) {
+    var results = response.matches;
+    console.log(response);
+    for (var i = 0; i < results.length; i++) {
+
+
+      var recipeDisplay = $('<div class = "recipeDisplay" clicked=>');
+      var image = $('<img class = "image">');
+      image.attr("src", response.matches[i].smallImageUrls[0]);
+
+      var recipeName = $("<p class = 'recipename'>");
+      recipeName.text(response.matches[i].recipeName);
+
+      recipeDisplay.append(image);
+
+      recipeDisplay.attr("recipeId", response.matches[i].id);
+
+      recipeDisplay.append(recipeName);
+      console.log(response.matches[i].recipeName);
+      $("#recipeDiv").prepend(recipeDisplay);
+    }
+  });
+
   var shoppingList = [];
 
   $("#submit").on("click", function() {
+    $('#recipeDiv').empty();
     event.preventDefault();
     var ingredient1 = $("#ingredient1").val();
     var ingredient2 = $("#ingredient2").val().trim();
     var ingredient3 = $("#ingredient3").val().trim();
 
-    var queryURL = "http://api.yummly.com/v1/api/recipes?_app_id=b21780d2&_app_key=edc2ee3a9551ef7f48b3279d332a2b09&q=" + ingredient1 + "&q=" + ingredient2 + "&q=" + ingredient3;
+    var queryURL = "http://api.yummly.com/v1/api/recipes?_app_id=b21780d2&_app_key=edc2ee3a9551ef7f48b3279d332a2b09&q=" + ingredient1 + "&q" + ingredient2 + "&q=" + ingredient3;
     //search recepies ajax call
     $.ajax({
       url: queryURL,
@@ -15,9 +46,8 @@ $('document').ready(function() {
     })
     .done(function(response) {
       var results = response.matches;
-      console.log(response);
-      for (var i = 0; i < results.length; i++) {
 
+      for (var i = 0; i < results.length; i++) {
 
         var recipeDisplay = $('<div class = "recipeDisplay" clicked=>');
         var image = $('<img class = "image">');
@@ -31,7 +61,7 @@ $('document').ready(function() {
         recipeDisplay.attr("recipeId", response.matches[i].id);
 
         recipeDisplay.append(recipeName);
-        console.log(response.matches[i].recipeName);
+
         $("#recipeDiv").prepend(recipeDisplay);
       }
     });
@@ -57,7 +87,7 @@ $('document').ready(function() {
         var totalTime = response.totalTime;
         var id = response.id;
         var recipeLink = response.source.sourceRecipeUrl;
-        var  link = $('<a class = "link" href="'+recipeLink+'">Read Directions</a>');
+        var  link = $('<a  target = "_blank" class = "link" href="'+recipeLink+'">Read Directions</a>');
 
         $(self).append('<form id = "'+id+'" empty=true ></form>');
 
@@ -69,7 +99,8 @@ $('document').ready(function() {
         };
         $("#"+id+"" ).append('<input id = "addToList" type = "submit" value = "Add to Shopping List" >');
         $("#" + id).append(link);
-        $('#' + id).attr('empty', 'false')
+        $('#' + id).attr('empty', 'false');
+        $(self).append("<button class = 'addToFavorites'>Add To Favorites</button>");
       }
       //  else {
       //    $('#' + id).remove();
@@ -80,6 +111,7 @@ $('document').ready(function() {
   });
 
   $("#addToList").on("click", "#addToList", function() {
+    event.preventDefault()
     $('.checkBox').each( function() {
        var listItem = $(this).val().trim();
        console.log(listItem);
