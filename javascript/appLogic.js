@@ -1,5 +1,3 @@
-
-
 $('document').ready(function() {
   var shoppingList = [];
 
@@ -20,7 +18,8 @@ $('document').ready(function() {
       console.log(response);
       for (var i = 0; i < results.length; i++) {
 
-        var recipeDisplay = $('<div class = "recipeDisplay">');
+
+        var recipeDisplay = $('<div class = "recipeDisplay" clicked=>');
         var image = $('<img class = "image">');
         image.attr("src", response.matches[i].smallImageUrls[0]);
         //image.attr("recipeId", response.matches[i].id);
@@ -52,25 +51,34 @@ $('document').ready(function() {
       method: "GET"
     })
     .done(function(response) {
-      console.log(response);
-      var totalTime = response.totalTime;
-      var recipeLink = response.source.sourceRecipeUrl;
-      var  link = $('<a class = "link" href="'+recipeLink+'">Read Directions</a>');
 
-      $(self).append('<form id = "form"></form>');
+        console.log(response);
+        var totalTime = response.totalTime;
+        var id = response.id;
+        var recipeLink = response.source.sourceRecipeUrl;
+        var  link = $('<a class = "link" href="'+recipeLink+'">Read Directions</a>');
 
-      for (var i = 0; i<response.ingredientLines.length; i++){
-        var ingredient = response.ingredientLines[i];
-        var rButton = $('<input class = "checkBox" type = "checkbox" value = "'+ingredient+'" >"'+ingredient+'"<br>');
-        $('#form').append(rButton);
-      };
-      $("form").append('<input id = "addToList" type = "submit" value = "Add to Shopping List" >');
-      $(self).append(link);
+        $(self).append('<form id = "'+id+'" empty=true ></form>');
+
+        if($('#' + id).attr("empty") === "true"){
+        for (var i = 0; i<response.ingredientLines.length; i++){
+          var ingredient = response.ingredientLines[i];
+          var rButton = $('<input class = "checkBox" type = "checkbox" value = "'+ingredient+'" >"'+ingredient+'"<br>');
+          $("#"+id+"").append(rButton);
+        };
+        $("#"+id+"" ).append('<input id = "addToList" type = "submit" value = "Add to Shopping List" >');
+        $("#" + id).append(link);
+        $('#' + id).attr('empty', 'false')
+      }
+      //  else {
+      //    $('#' + id).remove();
+      // };
+
     });
 
   });
 
-  $(document).on("click", "#addToList", function() {
+  $("#addToList").on("click", "#addToList", function() {
     $('.checkBox').each( function() {
        var listItem = $(this).val().trim();
        console.log(listItem);
