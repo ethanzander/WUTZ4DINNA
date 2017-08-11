@@ -29,7 +29,7 @@ $('document').ready(function() {
         recipeName.text(response.matches[i].recipeName);
 
         recipeDisplay.append(image);
-        recipeDisplay.attr('recipeId',response.matches[i].id;
+        recipeDisplay.attr('recipeId',response.matches[i].id);
         recipeDisplay.append(recipeName);
         console.log(response.matches[i].recipeName);
         $("#recipeDiv").append(recipeDisplay);
