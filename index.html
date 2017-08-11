@@ -16,23 +16,19 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700italic' rel='stylesheet' type='text/css'>
-
-  <link href='https://fonts.googleapis.com/css?family=Bungee+Shade' rel='stylesheet' type='text/css'>
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/added.css">
-
+  <link rel="stylesheet" href="css/animate.css">
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/ico" href="images/favicon.ico">
 
 </head>
-<!-- help from jason -->
 
 <body>
 
@@ -47,7 +43,7 @@
           <h1>What's For Dinner?</h1>
         </div>
         <div class="one-third column">
-          <img class="fridge" src="images/fridge.png" alt="Fridge">
+          <img class="fruit" src="images/Food-PNG-Clipart-180x180.png" alt="Fridge">
         </div>
       </div>
       <div class="one-half column" style="margin-top: 2%">
@@ -78,9 +74,10 @@
     __________________________________________________  -->
     <div class="row topmar5">
       <div class="one-third column u-pull-left">
-        <h4>Tell Us Watcha Got?</h4>
+        <h4>What's in the Fridge?</h4>
 
-        <img style="align-content:space-around" width="100%" src="images/Food-PNG-Clipart-180x180.png" alt="Delicious Food">
+        <img class="fridge" src="images/coolerFridgeLayer.png" alt="Fridge">
+        <img class="fridgeDoor animate infinite hinge" src="images/Door.png" alt="Fridge Door">
 
       </div>
 
@@ -101,22 +98,25 @@
     </div>
 
     <!--Lower Section  -->
-    <div class="clear">
-      <button type="button" name="button" value="clear" id="clear">Clear</button>
 
-    </div>
-    <div class="row" id="recipeDiv">
-    </div>
-    <!--Shopping List
+    <div class="row topmar5">
+      <div class="two-thirds column" id="recipeDiv">
+        <h4>Recipes</h4>
+        <div class="row">
+          <button type="button" name="button" value="clear" id="clear">Clear Recipes</button>
+        </div>
+        <div class="row">
+
+        </div>
+      </div>
+      <!--Shopping List
       ____________________________________________  -->
-    <div class="one-third column" id="shoppingList">
-      <p>Create a list here</p>
+      <div class="one-third column" id="shoppingList">
+        <h4>Shopping List</h4>
+        <p>Create a list here</p>
+      </div>
     </div>
   </div>
-  </div>
-
-
-
 
   <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
