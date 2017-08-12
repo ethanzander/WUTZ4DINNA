@@ -90,7 +90,7 @@ $('document').ready(function() {
         var recipeLink = response.source.sourceRecipeUrl;
         var  link = $('<a  target = "_blank" class = "link" href="'+recipeLink+'">Read Directions</a>');
 
-        $(self).append('<form id = "'+id+'" empty=true ></form>');
+        $(self).append('<form id = "'+id+'" class = "form" empty=true ></form>');
 
         if($('#' + id).attr("empty") === "true"){
         for (var i = 0; i<response.ingredientLines.length; i++){
