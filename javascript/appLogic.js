@@ -1,3 +1,4 @@
+
 $('document').ready(function () {
 
     var queryUrl0 = "http://api.yummly.com/v1/api/recipes?_app_id=b21780d2&_app_key=edc2ee3a9551ef7f48b3279d332a2b09&q=" + ""
@@ -109,7 +110,39 @@ $('document').ready(function () {
                 // };
 
             });
+        console.log(response);
+        var totalTime = response.totalTime;
+        var id = response.id;
+        var recipeLink = response.source.sourceRecipeUrl;
+        var  link = $('<a  target = "_blank" class = "link" href="'+recipeLink+'">Read Directions</a>');
 
+        $(self).append('<form id = "'+id+'" empty=true ></form>');
+
+        if($('#' + id).attr("empty") === "true"){
+        for (var i = 0; i<response.ingredientLines.length; i++){
+          var ingredient = response.ingredientLines[i];
+          var rButton = $('<input class = "checkBox" type = "checkbox" value = "'+ingredient+'" >"'+ingredient+'"<br>');
+          $("#"+id+"").append(rButton);
+        };
+        $("#"+id+"" ).append('<input id = "addToList" type = "submit" value = "Add to Shopping List" >');
+        $("#" + id).append(link);
+        $('#' + id).attr('empty', 'false');
+        $(self).append("<button class = 'addToFavorites'>Add To Favorites</button>");
+      }
+      //  else {
+      //    $('#' + id).remove();
+      // };
+
+    });
+
+  });
+
+  $("#addToList").on("click", "#addToList", function() {
+    event.preventDefault()
+    $('.checkBox').each( function() {
+       var listItem = $(this).val().trim();
+       console.log(listItem);
+       shoppingList.push(listItem);
     });
 
     $("#addToList").on("click", "#addToList", function () {
