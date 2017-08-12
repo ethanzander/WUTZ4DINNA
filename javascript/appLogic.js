@@ -1,5 +1,10 @@
 
+<<<<<<< HEAD
+  var queryUrl0 = "http://api.yummly.com/v1/api/recipes?_app_id=b21780d2&_app_key=edc2ee3a9551ef7f48b3279d332a2b09&q=" + ""
+  var shoppingList = [];
+=======
 $('document').ready(function () {
+>>>>>>> master
 
     var queryUrl0 = "http://api.yummly.com/v1/api/recipes?_app_id=b21780d2&_app_key=edc2ee3a9551ef7f48b3279d332a2b09&q=" + ""
 
@@ -24,11 +29,15 @@ $('document').ready(function () {
 
                 recipeDisplay.attr("recipeId", response.matches[i].id);
 
+<<<<<<< HEAD
+
+=======
                 recipeDisplay.append(recipeName);
                 console.log(response.matches[i].recipeName);
                 $("#recipeDiv").prepend(recipeDisplay);
             }
         });
+>>>>>>> master
 
     var shoppingList = [];
 
@@ -116,7 +125,7 @@ $('document').ready(function () {
         var recipeLink = response.source.sourceRecipeUrl;
         var  link = $('<a  target = "_blank" class = "link" href="'+recipeLink+'">Read Directions</a>');
 
-        $(self).append('<form id = "'+id+'" empty=true ></form>');
+        $(self).append('<form id = "'+id+'" class = "form" empty=true ></form>');
 
         if($('#' + id).attr("empty") === "true"){
         for (var i = 0; i<response.ingredientLines.length; i++){
@@ -129,21 +138,18 @@ $('document').ready(function () {
         $('#' + id).attr('empty', 'false');
         $(self).append("<button class = 'addToFavorites'>Add To Favorites</button>");
       }
-      //  else {
-      //    $('#' + id).remove();
-      // };
-
     });
 
   });
 
-  $("#addToList").on("click", "#addToList", function() {
-    event.preventDefault()
-    $('.checkBox').each( function() {
-       var listItem = $(this).val().trim();
-       console.log(listItem);
-       shoppingList.push(listItem);
-    });
+  $(document).on("click", ".checkBox", function() {
+    var pp = $(this).val();
+    shoppingList.push(pp);
+    console.log(shoppingList);
+    $('#list').append('<li>"'+pp+'"</li>');
+
+
+
 
     $("#addToList").on("click", "#addToList", function () {
         event.preventDefault()
