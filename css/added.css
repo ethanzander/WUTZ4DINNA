@@ -6,10 +6,11 @@
 
 .enterIngredients {
     padding: 1%;
+
 }
 
-html{
-    background-repeat: repeat;
+body{
+    background-image: url("https://github.com/ethanzander/WUTZ4DINNA/blob/master/images/whitey/whitey.png?raw=true")
 }
 .container{
     background-color: rgb(162,181,203);
@@ -39,7 +40,7 @@ html{
     margin-left: 15%;
 }
 
- .fruit{
+.fruit{
     width: 133%;
     position: relative;
     top: 9px;
@@ -84,3 +85,50 @@ h4{
     visibility: visible;
 }
 
+.image {
+    width: 200px;
+    margin-left: 5%;   
+    margin-top: 2%; 
+}
+
+.recipename{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    float: right;
+    margin-bottom: 1%;
+}
+
+.form {
+    position: relative;
+    left: 250px;
+    top: -80px;
+    padding: 0%;
+    margin-bottom: 1%;
+}
+
+.recipeDisplay{
+    border-bottom: solid 2px;
+    border-color: #bbb;
+    padding: 1%;
+
+}
+
+.link{
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    color: #555;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    box-sizing: border-box;
+}
