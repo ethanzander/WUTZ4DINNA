@@ -1,6 +1,7 @@
 $('document').ready(function() {
 
   var queryUrl0 = "http://api.yummly.com/v1/api/recipes?_app_id=b21780d2&_app_key=edc2ee3a9551ef7f48b3279d332a2b09&q=" + ""
+  var shoppingList = [];
 
   $.ajax({
     url: queryUrl0,
@@ -29,7 +30,7 @@ $('document').ready(function() {
     }
   });
 
-  var shoppingList = [];
+
 
   $("#submit").on("click", function() {
     $('#recipeDiv').empty();
@@ -102,21 +103,18 @@ $('document').ready(function() {
         $('#' + id).attr('empty', 'false');
         $(self).append("<button class = 'addToFavorites'>Add To Favorites</button>");
       }
-      //  else {
-      //    $('#' + id).remove();
-      // };
-
     });
 
   });
 
-  $("#addToList").on("click", "#addToList", function() {
-    event.preventDefault()
-    $('.checkBox').each( function() {
-       var listItem = $(this).val().trim();
-       console.log(listItem);
-       shoppingList.push(listItem);
-    });
+  $(document).on("click", ".checkBox", function() {
+    var pp = $(this).val();
+    shoppingList.push(pp);
+    console.log(shoppingList);
+    $('#list').append('<li>"'+pp+'"</li>');
+
+
+
 
   });
 
